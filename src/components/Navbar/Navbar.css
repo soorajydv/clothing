@@ -1,0 +1,159 @@
+:root {
+    /* Color Palette */
+    --primary-bg-color: #EEEEE6;
+    --secondary-bg-color: #2F2F2F;
+    --accent-color: #948177;
+    --text-color: #000;
+    --button-bg-color: #2F2F2F;
+    --button-text-color: #eee;
+    --hover-bg-color: #555454;
+    --wishlist-color: red;
+    --heart-unchecked-color: #ccc;
+}
+body{
+    margin: 0%;
+}
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    padding: 18px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* For non-mobile screens */
+.top-row, .bottom-row {
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    justify-content: space-between;
+}
+
+.hamburger {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-items {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: var(--secondary-bg-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu-toggle:checked + .menu-icon + .menu-items {
+    display: block;
+}
+
+.menu-items a {
+    display: block;
+    color: var(--button-text-color);
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-items a:hover {
+    background-color: var(--hover-bg-color);
+}
+
+.logo {
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.user-actions {
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: var(--hover-bg-color);
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    max-width: 300px;
+}
+
+.search-input {
+    padding: 10px 40px 10px 10px; /* Extra right padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px; /* Position it inside the input field */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--text-color); /* Use your color palette variable */
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Top row: Hamburger, logo, and site name */
+    .top-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Second row: Search box, cart, and user icon */
+    .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .user-actions {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+}
